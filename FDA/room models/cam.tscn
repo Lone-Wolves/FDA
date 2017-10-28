@@ -1,0 +1,31 @@
+[gd_scene load_steps=2 format=1]
+
+[ext_resource path="res://camera.gd" type="Script" id=1]
+
+[node name="Camera" type="Camera"]
+
+_import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+transform/local = Transform( -0.999362, 0, 0.035712, 0, 1, 0, -0.035712, 0, -0.999362, 0, 0.973393, -1.49094 )
+projection = 0
+fov = 65.0
+near = 0.1
+far = 100.0
+keep_aspect = 1
+current = false
+visible_layers = 1048575
+environment = null
+h_offset = 0.0
+v_offset = 0.0
+script/script = ExtResource( 1 )
+shake_amount = 0.05
+
+[node name="Timer" type="Timer" parent="."]
+
+process_mode = 1
+wait_time = 4.0
+one_shot = false
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+
+

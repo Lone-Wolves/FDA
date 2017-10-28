@@ -1,0 +1,65 @@
+[gd_scene load_steps=4 format=1]
+
+[ext_resource path="res://textures/240_F_31520498_c7779FPzqOqhHOjKLVmxewKiVQv0dbU5.png" type="Texture" id=1]
+[ext_resource path="res://fonts/breathe.fnt" type="BitmapFont" id=2]
+
+[sub_resource type="GDScript" id=1]
+
+script/source = "extends TextureButton
+
+# class member variables go here, for example:
+# var a = 2
+# var b = \"textvar\"
+
+func _ready():
+	# Called every time the node is added to the scene.
+	# Initialization here
+	pass
+
+
+func _on_TextureButton_button_down():
+	get_tree().change_scene(\"res://main.tscn\")
+"
+
+[node name="Node" type="Node"]
+
+[node name="TextureButton" type="TextureButton" parent="."]
+
+rect/scale = Vector2( 0.35, 0.35 )
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 406.0
+margin/top = 334.0
+margin/right = 1020.0
+margin/bottom = 574.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+textures/normal = ExtResource( 1 )
+params/resize_mode = 0
+params/stretch_mode = 0
+script/script = SubResource( 1 )
+
+[node name="Label" type="Label" parent="."]
+
+rect/scale = Vector2( 3, 3 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 174.0
+margin/top = 143.0
+margin/right = 409.0
+margin/bottom = 175.0
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0.222656, 0.75, 1 )
+text = "QUAKKY FUN"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[connection signal="button_down" from="TextureButton" to="TextureButton" method="_on_TextureButton_button_down"]
+
+
